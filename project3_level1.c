@@ -5,7 +5,6 @@
 #include <math.h>
 
 #define UNKNOWN "n"
-#define CONSTANT "C"
 
 void eliminationGauss();
 
@@ -37,10 +36,9 @@ int main() {
 void eliminationGauss() {
     int k, n;
     float A[20][20], c, x[10], sum = 0.0;
-    float C[20];
-    printf("\nEnter the order of matrix: ");   // Write the order of the matrix formed by the coefficients
+    printf("\nEnter the order of matrix: ");   
     scanf("%d", &n);
-    printf("\nEnter the elements of augmented matrix row-wise:\n\n");   // Enter the coefficients and value row-wise
+    printf("\nEnter the elements of augmented matrix row-wise:\n\n");   
     for (int row = 1; row <= n; row++)
     {
         for (int column = 1; column <= (n + 1); column++)
@@ -50,7 +48,7 @@ void eliminationGauss() {
         }
     } 
 
-    for (int column = 1; column <= n; column++) //loop for the generation of upper triangular matrix
+    for (int column = 1; column <= n; column++) 
     {
         for (int row = 1; row <= n; row++)
         {
@@ -74,7 +72,7 @@ void eliminationGauss() {
         }
         printf("\n");
     }
-    /* this loop is for backward substitution*/
+   
     for (int row = n - 1; row >= 1; row--)
     {
         sum = 0;
